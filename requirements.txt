@@ -1,0 +1,4 @@
+Flask
+Flask-Script
+Jinja2
+PyYAML
