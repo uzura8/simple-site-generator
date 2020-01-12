@@ -33,4 +33,5 @@ pip-selfcheck.json
 package-lock.json
 /node_modules/*
 
-config.yml
+/config.yml
+/public/*

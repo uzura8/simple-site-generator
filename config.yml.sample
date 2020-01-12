@@ -1,1 +1,18 @@
-site_name: Sample Site
+site_name: OTM
+site_description: OpenSource Tag Manager and Action tracker. You can reach raw data.
+header_navs:
+  - label: About
+    href: '#about'
+  - label: Product
+    href: '#product'
+  - label: Pricing
+    href: '#pricing'
+  - label: Customers
+    href: '#customers'
+  - label: Blog
+    href: 'http://blog.example.com'
+  - label: Support
+    href: '#support'
+lead:
+  label: Open Tag Manager
+  description: OpenSource Tag Manager and Action tracker. You can reach raw data.

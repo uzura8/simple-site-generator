@@ -7,6 +7,10 @@ tpl = env.get_template('index.html')
 with open('config.yml', 'r') as stream:
     confs = yaml.load(stream)
 
+#!!!!!!!!!!!!!!!!
+from pprint import pprint
+pprint(confs)
+#!!!!!!!!!!!!!!!!
 rendered = tpl.render(confs)
 
 with open('public/index.html', 'w') as fh:
