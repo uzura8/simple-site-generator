@@ -5,7 +5,7 @@ env = Environment(loader=FileSystemLoader('templates'))
 tpl = env.get_template('index.html')
 
 with open('config.yml', 'r') as stream:
-    confs = yaml.load(stream, Loader=yaml.FullLoader)
+    confs = yaml.load(stream)
 
 rendered = tpl.render(confs)
 
