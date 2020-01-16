@@ -1,18 +1,43 @@
-site_name: OTM
-site_description: OpenSource Tag Manager and Action tracker. You can reach raw data.
-header_navs:
-  - label: About
-    href: '#about'
-  - label: Product
-    href: '#product'
-  - label: Pricing
-    href: '#pricing'
-  - label: Customers
-    href: '#customers'
-  - label: Blog
-    href: 'http://blog.example.com'
-  - label: Support
-    href: '#support'
-lead:
-  label: Open Tag Manager
-  description: OpenSource Tag Manager and Action tracker. You can reach raw data.
+common:
+  site_name: OTM
+  site_description: OpenSource Tag Manager and Action tracker. You can reach raw data.
+  header_navs:
+    - label: About
+      href: '#about'
+    - label: Product
+      href: '#product'
+    - label: Pricing
+      href: '#pricing'
+    - label: Customers
+      href: '#customers'
+    - label: Blog
+      href: 'http://blog.example.com'
+    - label: Support
+      href: '#support'
+index:
+  lead:
+    label: Open Tag Manager
+    description: OpenSource Tag Manager and Action tracker. You can reach raw data.
+  about:
+    description: |
+      OTM is a chat service where customers can create their own chat scenarios.
+      Implementing Natural Language Processing (NLP) and recommendation engine using AI, the bot can carry on a natural conversation with it's users.
+  product:
+    characters:
+      - label: Natural language processing
+        icon: brain
+        description: |
+          Through Intent / Entity Extraction AI technology, user's intention and speaking content will be automatically recognized.
+      - label: Natural language processing
+        icon: link
+        description: |
+          Through Intent / Entity Extraction AI technology, user's intention and speaking content will be automatically recognized.
+      - label: Natural language processing
+        icon: cog
+        description: |
+          Through Intent / Entity Extraction AI technology, user's intention and speaking content will be automatically recognized.
+      - label: Natural language processing
+        icon: comment
+        description: |
+          Through Intent / Entity Extraction AI technology, user's intention and speaking content will be automatically recognized.
+
