@@ -1,6 +1,7 @@
 common:
   site_name: OTM
   site_description: OpenSource Tag Manager and Action tracker. You can reach raw data.
+  publish_year: 2020
   header_navs:
     - label: About
       href: '#about'
@@ -99,6 +100,19 @@ index:
           - '&#9675;'
           - '&#9675;'
           - '&#9675;'
+  customers:
+    - label: Apple
+      img: /assets/img/portfolio/thumbnails/1.jpg
+      url: http://example.com
+    - label: Amazon
+      img: /assets/img/portfolio/thumbnails/2.jpg
+      url: http://example.com
+    - label: Google
+      img: /assets/img/portfolio/thumbnails/3.jpg
+      url: http://example.com
+    - label: Facebook
+      img: /assets/img/portfolio/thumbnails/4.jpg
+      url: http://example.com
   support:
     description: |
       Inquire our staffs for more detail.
