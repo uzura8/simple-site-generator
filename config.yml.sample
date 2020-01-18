@@ -40,4 +40,69 @@ index:
         icon: comment
         description: |
           Through Intent / Entity Extraction AI technology, user's intention and speaking content will be automatically recognized.
+  pricing:
+    titles:
+      - Num of active users per month
+      - Num of user accounts
+      - Num of bots
+      - Num of administrators
+      - Num of API
+      - Keyword matching
+      - Push message
+      - Report
+    plans:
+      - label: Free
+        color: info
+        price: Free
+        values:
+          - 50
+          - 50
+          - 2
+          - 1
+          - '&#8553;'
+          - '&#9675;'
+          - '&#8553;'
+          - '&#8553;'
+      - label: Minimum
+        color: success
+        price: '&#165;10,000/month'
+        values:
+          - 10,000
+          - 10,000
+          - 5
+          - 3
+          - '&#8553;'
+          - '&#9675;'
+          - '&#8553;'
+          - '&#9675;'
+      - label: Standard
+        color: warning
+        price: '&#165;50,000/month'
+        values:
+          - 100,000
+          - 100,000
+          - 10
+          - 5
+          - '&#9675;'
+          - '&#9675;'
+          - '&#9675;'
+          - '&#9675;'
+      - label: Enterprise
+        color: danger
+        price: Contact
+        values:
+          - Contact
+          - Contact
+          - Contact
+          - Contact
+          - '&#9675;'
+          - '&#9675;'
+          - '&#9675;'
+          - '&#9675;'
+  support:
+    description: |
+      Inquire our staffs for more detail.
+      Please contact the number below ,or on our website.
+    phone: +1 (202) 555-0149
+    email: contact@yourwebsite.com
 
