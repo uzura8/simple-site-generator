@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">About {{ common.site_name }}</h2>
+          <h2 class="text-white mt-0">{{ about.label }}</h2>
           <hr class="divider light my-4">
           <p class="text-white-50 mb-4">{{ about.description | nl2br }}</p>
           <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
@@ -31,10 +31,10 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Product Section -->
   <section class="page-section" id="product">
     <div class="container">
-      <h2 class="text-center mt-0">Product</h2>
+      <h2 class="text-center mt-0">{{ product.label }}</h2>
       <hr class="divider my-4">
       <div class="row">
 {% for item in product.characters %}
@@ -50,29 +50,29 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Pricing Section -->
   <section class="page-section" id="pricing">
     <div class="container">
-      <h2 class="text-center mt-0">Priceing</h2>
+      <h2 class="text-center mt-0">{{ pricing.label }}</h2>
       <hr class="divider my-4">
 
       <div class="row no-gutters">
         <div class="col-lg-4 d-none d-lg-block">
           <div class="mt-5">
             <ul class="list-group">
-              <li class="list-group-item">Plan</li>
-              <li class="list-group-item">Price</li>
+              <li class="list-group-item">{{ pricing.plan.label }}</li>
+              <li class="list-group-item">{{ pricing.label }}</li>
 {% for title in pricing.titles %}
-              <li class="list-group-item">{{ title }}</li>
+              <li class="list-group-item u-ws-nowrap">{{ title }}</li>
 {% endfor %}
             </ul>
           </div>
         </div>
-{% for plan in pricing.plans %}
+{% for plan in pricing.plan['items'] %}
         <div class="col-lg-2">
           <div class="mt-5">
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-{{plan.color}}">{{ plan.label }}</li>
+            <ul class="list-group ml-1">
+              <li class="list-group-item list-group-item-{{ plan.color }} u-ws-nowrap">{{ plan.label }}</li>
               <li class="list-group-item">
                 <div class="d-lg-none"><small>Price</small></div>
                 <div>{{ plan.price }}</div>
@@ -91,28 +91,19 @@
     </div>
   </section>
 
-  <!-- Call to Action Section
-  <section class="page-section bg-dark text-white" id="customers">
-    <div class="container text-center">
-      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
-    </div>
-  </section>
-  -->
-
-  <!-- Services Section -->
+  <!-- Customers Section -->
   <section class="page-section" id="customers">
     <div class="container">
-      <h2 class="text-center mt-0">Customers</h2>
+      <h2 class="text-center mt-0">{{ customers.label }}</h2>
       <hr class="divider my-4">
       <div class="row">
-{% for item in customers %}
+{% for item in customers['items'] %}
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <h3 class="h4 mb-2">{{ item.label }}</h3>
             <div>
               <a href="{{ item.url }}" target="_blank">
-                <img src="{{ item.img }}" alt="{{ item.label }}" class="img-thumbnail">
+                <img src="{{ item.img }}" alt="{{ item.label }}" class="img-thumbnail rounded-circle">
               </a>
             </div>
           </div>
@@ -122,12 +113,12 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Support Section -->
   <section class="page-section" id="support">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Support</h2>
+          <h2 class="mt-0">{{ support.label }}</h2>
           <hr class="divider my-4">
           <p class="text-muted mb-5">{{ support.description | nl2br }}</p>
         </div>

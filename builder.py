@@ -1,6 +1,32 @@
 import yaml
 from jinja2 import Environment, FileSystemLoader
 from common.filters import nl2br
+from common.file import makedirs
+
+def build_pages(tmpl_env, lang, is_default_lang=False):
+    conf_file = 'content/{}.yml'.format(lang)
+    with open(conf_file, 'r') as stream:
+        confs = yaml.load(stream)
+
+    comon = confs['common']
+    for page, vals in confs.items():
+        if page == 'common':
+            continue
+        file_name = page + '.html'
+        tpl = tmpl_env.get_template(file_name)
+        vals['common'] = comon
+        rendered = tpl.render(vals)
+
+        if is_default_lang:
+            output_path = 'public/'
+        else:
+            output_path = 'public/{}'.format(lang)
+            makedirs(output_path)
+
+        output_file = '{}/{}'.format(output_path, file_name)
+        with open(output_file, 'w') as fh:
+            fh.write(rendered)
+
 
 env = Environment(
     loader=FileSystemLoader('templates'),
@@ -16,16 +42,10 @@ env.filters['nl2br'] = nl2br
 with open('config.yml', 'r') as stream:
     confs = yaml.load(stream)
 
-comon = confs['common']
-for page, vals in confs.items():
-    if page == 'common':
-        continue
-    file_name = page + '.html'
-    tpl = env.get_template(file_name)
-    vals['common'] = comon
-    rendered = tpl.render(vals)
-    with open('public/' + file_name, 'w') as fh:
-        fh.write(rendered)
+for lang in confs['lang']['items']:
+    build_pages(env, lang)
+
+build_pages(env, confs['lang']['default'], True)
 
 print('Genarated!')
 

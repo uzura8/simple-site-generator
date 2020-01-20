@@ -22,7 +22,9 @@ Edit configs for your site by yaml format, after copy from sample.
 
 ```bash
 cp config.yml.sample config.yml
-vi config.yml
+cp content/en.yml.sample content/en.yml
+cp content/ja.yml.sample content/ja.yml
+vi config.yml content/en.yml content/ja.yml
 ```
 
 ### Generate! ###
