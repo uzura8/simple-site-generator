@@ -1,0 +1,6 @@
+lang:
+  items:
+    - en
+    - ja
+  default: en
+
