@@ -83,4 +83,4 @@ python3 builder.py
 nginx
 ```
 
-And you upload to public space
+You can access http://localhost:8080/
