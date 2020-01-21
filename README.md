@@ -23,7 +23,6 @@ RUN apt-get -y install nginx
 RUN apt-get -y install python3.6-dev
 RUN apt-get -y install python3-pip
 COPY default.conf /etc/nginx/conf.d/default.conf
-CMD ["nginx"]
 ```
 
 ##### run.sh
