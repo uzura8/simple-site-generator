@@ -5,8 +5,8 @@ from common.file import makedirs
 
 def build_pages(tmpl_env, lang, is_default_lang=False):
     conf_file = 'content/{}.yml'.format(lang)
-    with open(conf_file, 'r') as stream:
-        confs = yaml.load(stream)
+    with open(conf_file, 'r', encoding='utf8') as stream:
+        confs = yaml.load(stream, Loader=yaml.FullLoader)
 
     comon = confs['common']
     for page, vals in confs.items():
@@ -24,7 +24,7 @@ def build_pages(tmpl_env, lang, is_default_lang=False):
             makedirs(output_path)
 
         output_file = '{}/{}'.format(output_path, file_name)
-        with open(output_file, 'w') as fh:
+        with open(output_file, 'w', encoding='utf8') as fh:
             fh.write(rendered)
 
 
@@ -39,8 +39,8 @@ env = Environment(
 )
 env.filters['nl2br'] = nl2br
 
-with open('config.yml', 'r') as stream:
-    confs = yaml.load(stream)
+with open('config.yml', 'r', encoding='utf8') as stream:
+    confs = yaml.load(stream, Loader=yaml.FullLoader)
 
 for lang in confs['lang']['items']:
     build_pages(env, lang)
