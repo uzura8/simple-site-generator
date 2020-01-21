@@ -80,7 +80,8 @@ vi config.yml content/en.yml content/ja.yml
 After execute below command, index.html generated under public dir.
 
 ```bash
-python builder.py
+python3 builder.py
+nginx
 ```
 
 And you upload to public space
