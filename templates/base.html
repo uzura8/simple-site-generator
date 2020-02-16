@@ -28,7 +28,10 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top"
+  data-lang-default="{{ lang_confs.default }}"
+  data-langs="{% for lang in lang_confs.langs %}{{ lang.code }},{% endfor %}"
+>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -80,7 +83,11 @@
   <script src="/assets/js/creative.min.js"></script>
 
   <script>
-    (function () {
+    var body = document.querySelector('body')
+    var langDefault = body.dataset.langDefault
+    var langs = body.dataset.langs
+    langs = langs.replace(/^[,]+|[,]+$/g, '').split(',')
+    (function (langs, defLang) {
       var currentPath = location.pathname
       if (['', '/', '/index.html'].indexOf(currentPath) === -1) return
 
@@ -88,10 +95,12 @@
         || window.navigator.language
         || window.navigator.userLanguage
         || window.navigator.browserLanguage
-      langItems = lang.split('-')
-      var locationPath = '/' + langItems[0]
+      lang = lang.split('-').shift()
+      if (langs.indexOf(lang) === -1) return
+
+      var locationPath = '/' + lang
       location.replace(locationPath)
-    }())
+    }(langs, langDefault))
   </script>
 
 </body>
