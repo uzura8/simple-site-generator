@@ -44,6 +44,16 @@
             <a class="nav-link js-scroll-trigger" href="{{ item.href }}">{{ item.label }}</a>
           </li>
 {% endfor %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ lang_confs.labels[lang_code] }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+{% for lang in lang_confs.langs %}
+              <a class="dropdown-item" href="/{{ lang.code }}">{{ lang.labels[lang_code] }}</a>
+{% endfor %}
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -68,6 +78,21 @@
 
   <!-- Custom scripts for this template -->
   <script src="/assets/js/creative.min.js"></script>
+
+  <script>
+    (function () {
+      var currentPath = location.pathname
+      if (['', '/', '/index.html'].indexOf(currentPath) === -1) return
+
+      var lang = (window.navigator.languages && window.navigator.languages[0])
+        || window.navigator.language
+        || window.navigator.userLanguage
+        || window.navigator.browserLanguage
+      langItems = lang.split('-')
+      var locationPath = '/' + langItems[0]
+      location.replace(locationPath)
+    }())
+  </script>
 
 </body>
 

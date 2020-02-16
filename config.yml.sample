@@ -1,6 +1,15 @@
 lang:
-  items:
-    - en
-    - ja
   default: en
+  labels:
+      en: Language
+      ja: 言語設定
+  langs:
+    - code: en
+      labels:
+        en: English
+        ja: 英語
+    - code: ja
+      labels:
+        en: Japanese
+        ja: 日本語
 
