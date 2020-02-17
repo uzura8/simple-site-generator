@@ -85,8 +85,11 @@
   <script>
     var body = document.querySelector('body')
     var langDefault = body.dataset.langDefault
-    var langs = body.dataset.langs
-    langs = langs.replace(/^[,]+|[,]+$/g, '').split(',')
+    var langs = (function(langsStr) {
+      if (typeof langsStr !== "string") return []
+      return langsStr.replace(/^[,]+|[,]+$/g, '').split(',')
+    }(body.dataset.langs));
+
     (function (langs, defLang) {
       var currentPath = location.pathname
       if (['', '/', '/index.html'].indexOf(currentPath) === -1) return
