@@ -91,7 +91,7 @@ You can access http://localhost:8080/
 
 
 
-##Deliver from Google Cloud Strage 
+## Deliver from Google Cloud Strage 
 
 ### Preparation 
 
