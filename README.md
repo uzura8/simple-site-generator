@@ -224,6 +224,6 @@ python3 builder.py
 #### Upload to GCS
 
 ````
-bash bin/upload.sh your-domain.example.com
+bash gcs_upload.sh your-domain.example.com
 ````
 
